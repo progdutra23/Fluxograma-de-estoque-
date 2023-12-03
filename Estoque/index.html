@@ -1,0 +1,31 @@
+<script>
+    saldo = parseInt(prompt("Informar saldo inicial"));
+    document.write("Saldo inicial: " + saldo + "<br>");
+    encerrar = "n";  /* decisão de não encerrar a opersção, continuação do processo */
+    while(encerrar == "n")
+    {
+    tipo = parseInt(prompt("Informar tipo de entrada"));
+    quantidade = parseInt(prompt("Informar quantidade"));
+    if(tipo == 1)  /* adição de peças para o saldo */
+    {
+    saldo = saldo + quantidade;
+    document.write("Entrada: " + quantidade + "<br>");
+    }
+    if(tipo == 2)  /* subtração de peças para o saldo */
+    {
+    if(saldo >= quantidade)
+    {
+    saldo = saldo -quantidade;
+    document.write("Saída: " + quantidade + "<br>");
+    }
+    else
+    {
+    document.write("Saldo insuficiente" + "<br>");
+    alert("Saldo insuficiente");  /* aviso de que não há peças o suficente para a operação */
+    }
+    }
+    document.write("Saldo: " + saldo + "<br>");
+    encerrar = prompt("Deseja encerrar ? (s/n)");
+    }
+    document.write("Sistema encerrado" + "<br>");
+    </script>
